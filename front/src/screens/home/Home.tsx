@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Home.scss"
+import "./Home.less"
 
 
 function Home() {
   return (
-    <div className="Home">
-      Home
+    <div>
+
     </div>
   )
 }
