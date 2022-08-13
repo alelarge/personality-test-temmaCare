@@ -27,6 +27,10 @@ dependencies {
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
 	compileOnly "org.springframework.boot:spring-boot-starter-data-rest"
 
+	implementation "org.springdoc:springdoc-openapi-ui:1.6.9"
+	implementation "org.springdoc:springdoc-openapi-data-rest:1.6.9"
+	implementation "org.springdoc:springdoc-openapi-webmvc-core:1.6.9"
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

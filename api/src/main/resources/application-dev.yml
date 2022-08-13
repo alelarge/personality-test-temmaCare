@@ -8,8 +8,6 @@ spring:
   jpa:
     defer-datasource-initialization: true
     show-sql: true
-    hibernate:
-      ddl-auto: update
 
   h2:
     console:
@@ -17,6 +15,13 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
+
+hibernate:
+  hbm2ddl:
+    auto: create-drop
+
+springdoc:
+  paths-to-match: /**
 
 logging:
   level:
