@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   const dispatch:AppDispatch = useDispatch()
-  const tests = useSelector((state:RootState) => state.tests.tests)
+  const tests = useSelector((state:RootState) => state.home.tests)
 
   useEffect(() => {
     dispatch(fetchTests())

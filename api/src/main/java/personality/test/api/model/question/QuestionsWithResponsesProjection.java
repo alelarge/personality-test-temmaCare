@@ -13,6 +13,5 @@ import java.util.List;
 public interface QuestionsWithResponsesProjection {
     String getNumber();
     String getQuestionText();
-    Test getTest();
     List<Response> getResponses();
 }

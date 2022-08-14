@@ -17,7 +17,7 @@ const initialState: State = {
 
 
 export const fetchTests = createAsyncThunk(
-  'test/fetchTests',
+  'tests/fetchTests',
   async () => {
     const response = await fetch(process.env.REACT_APP_API_BASE_URL + '/tests', {
       method: 'GET',

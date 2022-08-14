@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import homeReducer from './screens/home/HomeSlice'
+import testReducer from './screens/test/TestSlice'
 
 export const store = configureStore({
   reducer: {
-    tests: homeReducer,
+    home: homeReducer,
+    test: testReducer,
   },
 })
 
