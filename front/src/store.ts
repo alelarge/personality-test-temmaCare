@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import homeReducer from './screens/home/HomeSlice'
-import testReducer from './screens/test/TestSlice'
+import homeReducer from './screens/Home/HomeSlice'
+import testReducer from './screens/Test/TestSlice'
 
 export const store = configureStore({
   reducer: {

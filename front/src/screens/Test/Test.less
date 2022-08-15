@@ -1,0 +1,32 @@
+.test-container {
+  width: 40rem;
+  max-width: 100%;
+  margin: 8rem auto 0 auto;
+  border: 1px solid #352157;
+  padding: 1rem;
+
+  .test-responses {
+    width: 100%;
+
+    .test-response {
+      display: block;
+      margin: 0 0 0.5rem 0;
+      padding: 0.5rem;
+  
+      &.ant-radio-wrapper-checked {
+        background-color: #ece0ff;
+      }
+  
+      &.ant-radio-wrapper::after {
+        display: none;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  
+}

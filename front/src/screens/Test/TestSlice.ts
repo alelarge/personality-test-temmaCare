@@ -148,7 +148,7 @@ const testsSlice = createSlice({
 
     builder.addCase(submitTest.fulfilled, (state, { payload }) => {
       state.submitTestStatus = "success"
-      state.testResult = payload._embedded.testResult
+      state.testResult = payload.result
     })
 
     builder.addCase(submitTest.rejected, (state) => {

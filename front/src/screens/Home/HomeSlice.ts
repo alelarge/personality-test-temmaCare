@@ -48,7 +48,6 @@ const testsSlice = createSlice({
     })
 
     builder.addCase(fetchTests.fulfilled, (state, { payload }) => {
-      console.log(payload)
       state.fetchTestsStatus = "success"
       state.tests = payload._embedded.tests
     })
