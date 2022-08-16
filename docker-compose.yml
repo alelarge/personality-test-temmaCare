@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  personality_back:
+    build:
+      context: ./api
+    ports:
+      - '8080:8080'
+
+  personality_front:
+    build:
+      context: ./front
+    ports:
+      - '3000:3000'
