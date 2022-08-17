@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button } from 'antd'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../store'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch, RootState } from '../../store'
 import { Link, Navigate } from 'react-router-dom'
 import Header from '../../components/Header'
 import "./TestResult.less"
+import { deleteTestResult } from '../Test/TestSlice'
 
 
 function TestResult() {
+  const dispatch:AppDispatch = useDispatch()
   const testResult = useSelector((state:RootState) => state.test.testResult)
 
+
+  useEffect(() => {
+    return () => {
+      dispatch(deleteTestResult())
+    }
+  }, [])
+  
 
   return (
     <>

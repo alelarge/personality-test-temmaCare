@@ -10,8 +10,7 @@ import {
   submitTest,
   idleFetchQuestionsStatus, 
   idleFetchTestStatus, 
-  idleSubmitTestStatus, 
-  deleteTestResult
+  idleSubmitTestStatus,
 } from './TestSlice'
 import "./Test.less"
 import Header from '../../components/Header'
@@ -29,7 +28,6 @@ function Test() {
 
 
   useEffect(() => {
-    dispatch(deleteTestResult())
     if (testId) {
       dispatch(fetchTest({ testId }))
       dispatch(fetchQuestions({ testId }))
