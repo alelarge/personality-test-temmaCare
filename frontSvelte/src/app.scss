@@ -1,0 +1,15 @@
+header {
+  background: url('/welcome.jpg');
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  color: #fff9bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #352157 !important;
+
+    .navbar-brand {
+        svg {
+            color: #fff9bc;
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+
+    .nav-item {
+        .nav-link {
+            color: #fff9bc;
+
+            &:hover,
+            &.show {
+                color: #1890ff;
+            }
+        }
+    }
+}
