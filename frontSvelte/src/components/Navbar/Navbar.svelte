@@ -1,18 +1,7 @@
 <script>
     import './Navbar.scss';
 
-    async function getTestList() {
-      const res = await fetch(`http://localhost:8080/tests`);
-
-      if (res.ok) {
-        return await res.json();
-      } else {
-        const text = await res.text();
-        throw new Error(text);
-      }
-    }
-
-    let data = getTestList();
+    export let data;
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
