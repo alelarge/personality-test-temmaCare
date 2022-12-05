@@ -1,5 +1,18 @@
 <script>
     import './Navbar.scss';
+
+    async function getTestList() {
+      const res = await fetch(`http://localhost:8080/tests`);
+
+      if (res.ok) {
+        return await res.json();
+      } else {
+        const text = await res.text();
+        throw new Error(text);
+      }
+    }
+
+    let data = getTestList();
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,9 +30,11 @@
                     Available Tests
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Login</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  {#await data then data}
+                    {#each data._embedded.tests as test (test.id)}
+                      <li><a class="dropdown-item" href="#">{test.title}</a></li>
+                    {/each}
+                  {/await}
                 </ul>
             </li>
         </ul>
