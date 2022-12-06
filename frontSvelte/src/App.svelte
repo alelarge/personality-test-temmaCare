@@ -1,7 +1,8 @@
 <script>
+  import { Router, Route, Link } from "svelte-navigator";
   import Navbar from './components/Navbar/Navbar.svelte';
-  import Header from './components/Header/Header.svelte';
-  import TestItem from './components/TestItem/TestItem.svelte';
+  import Home from './routes/Home.svelte';
+  import Test from './routes/Test.svelte';
   import './app.scss';
 
   async function getTestList() {
@@ -18,15 +19,12 @@
     let data = getTestList();
 </script>
 
-<main>
+<Router>
   <Navbar data={data} />
-  <Header />
-  <section>
-    {#await data then data}
-      {#each data._embedded.tests as test (test.id)}
-        <TestItem test={test} />
-      {/each}
-    {/await}
-  </section>
-
-</main>
+  <Route path="/">
+    <Home data={data} />
+  </Route>
+  <Route path="/test/:testId" let:params>
+    <Test testId={params.testId} />
+  </Route>
+</Router>
