@@ -3,6 +3,7 @@
   import Navbar from './components/Navbar/Navbar.svelte';
   import Home from './routes/Home.svelte';
   import Test from './routes/Test.svelte';
+  import TestResult from './routes/TestResult.svelte';
   import './app.scss';
 
   async function getTestList() {
@@ -26,5 +27,8 @@
   </Route>
   <Route path="/test/:testId" let:params>
     <Test testId={params.testId} />
+  </Route>
+  <Route path="/test/:testId/result" let:params>
+    <TestResult testId={params.testId} />
   </Route>
 </Router>
