@@ -1,7 +1,8 @@
 <script>
     import { useNavigate } from "svelte-navigator";
-    import Question from '../components/Question/Question.svelte';
-    import { testResult } from "../stores";
+    import Question from '../../components/Question/Question.svelte';
+    import { testResult } from "../../stores";
+    import './Test.scss';
     export let testId;
 
     const navigate = useNavigate();
@@ -55,15 +56,17 @@
     let data = getTestQuestions(testId);
 </script>
 
-{#await data then data}
-  {#each data._embedded.questions as question (question.number)}
-    <Question 
-      question={question}
-      questionCount={data._embedded.questions.length}
-      isHidden={question.number != currentQuestionNumber}
-      handleClickAnswer={handleClickAnswer} 
-      handleClickSubmit={handleClickSubmit}
-      handleClickPrevious={handleClickPrevious}
-    />
-  {/each}
-{/await}
+<section class="Test">
+  {#await data then data}
+    {#each data._embedded.questions as question (question.number)}
+      <Question 
+        question={question}
+        questionCount={data._embedded.questions.length}
+        isHidden={question.number != currentQuestionNumber}
+        handleClickAnswer={handleClickAnswer} 
+        handleClickSubmit={handleClickSubmit}
+        handleClickPrevious={handleClickPrevious}
+      />
+    {/each}
+  {/await}
+</section>

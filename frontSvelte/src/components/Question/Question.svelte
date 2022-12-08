@@ -1,4 +1,6 @@
 <script>
+    import './Question.scss'
+
     export let question;
     export let questionCount;
     export let handleClickAnswer;
@@ -31,28 +33,28 @@
                         </li>
                     {/each}
                     </ul>
-                    <a 
-                        href="#" 
-                        class="btn btn-primary {question.number == 1 ? 'visually-hidden' : ''}"
-                        on:click={ () => { handleClickPrevious() } }
-                    >
-                        Previous
-                    </a>
-                    <a 
-                        href="#"
-                        class="btn btn-primary {!hasClickAnswer ? 'disabled' : ''}"
-                        on:click={ () => { handleClickSubmit(questionCount)} }
-                    >
-                        {question.number == questionCount ? 'Submit Test' : 'Submit' }
-                    </a>
+                    <div class="actions">
+                        <span>
+                            <button 
+                            href="#" 
+                            class="btn btn-primary {question.number == 1 ? 'visually-hidden' : ''}"
+                            on:click={ () => { handleClickPrevious() } }
+                            >
+                                Previous
+                            </button>
+                        </span>
+                        <span>
+                            <button 
+                                href="#"
+                                class="btn btn-primary {!hasClickAnswer ? 'disabled' : ''}"
+                                on:click={ () => { handleClickSubmit(questionCount)} }
+                            >
+                                {question.number == questionCount ? 'Submit Test' : 'Submit' }
+                            </button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    li {
-        list-style: none;
-    }
-</style>
